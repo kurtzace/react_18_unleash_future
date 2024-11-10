@@ -47,6 +47,8 @@ Reinforcement learning (RL) is a type of machine learning where an agent learns 
 - Agent cant control 100, opponent. gravity, friction. 
 
 Markov Decision Process (discrete finite time , stochastic (future is modified partially) control process - decision)
+@
+
 
 ![image](https://github.com/user-attachments/assets/36eee823-0160-4a9e-9e71-14acf15e31d2)
 
@@ -378,5 +380,3 @@ The Percentage Reward Function adjusts rewards based on the car's progress along
 
 AWS DeepRacer combines the excitement of racing with the challenge of machine learning, making it an excellent tool for both education and entertainment.
 
-</section>
-```
