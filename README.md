@@ -1,7 +1,7 @@
 ### Diving into Reinforcement learning via AWS Deep Racer
 
-Reinforcement learning (RL) is a type of machine learning where an agent learns to make decisions by performing actions and receiving rewards.
-
+Reinforcement learning (RL) is a type of machine learning where an agent learns to make decisions by performing actions and receiving rewards. 
+[Notes from AWS DeepRacer](https://github.com/kurtzace/diary-2024/issues/14)
 **Key Concepts:**
 - **Agent**: The learner or decision maker (e.g., DeepRacer car).
 - **Environment**: The world the agent interacts with (e.g., the race track).
