@@ -1,56 +1,101 @@
 ### Diving into Reinforcement learning via AWS Deep Racer
 
-Reinforcement learning (RL) is a type of machine learning where an agent learns to make decisions by performing actions and receiving rewards. 
-[Notes from AWS DeepRacer](https://github.com/kurtzace/diary-2024/issues/14)
+Reinforcement learning (RL) is a machine learning paradigm where an *agent* learns to make optimal decisions within an *environment* by trial and error.  The agent's actions influence its state, and it receives *rewards* or *penalties* based on the outcome. The goal is to learn a *policy* – a strategy for selecting actions – that maximizes its long-term cumulative reward.
+
+<sup>[Notes from AWS DeepRacer](https://github.com/kurtzace/diary-2024/issues/14)</sup>
+
+@
+
+
+
 **Key Concepts:**
 - **Agent**: The learner or decision maker (e.g., DeepRacer car).
 - **Environment**: The world the agent interacts with (e.g., the race track).
 - **State**: The current situation of the agent (e.g., position on track).
 - **Action**: The decision taken by the agent (e.g., move forward, turn left).
 - **Reward**: The feedback from the environment (e.g., staying on track).
+@
+
+
+![image](https://github.com/user-attachments/assets/36eee823-0160-4a9e-9e71-14acf15e31d2)
 
 @
 
 
-**Equations:**
-- **Policy**: \( \pi(a|s) \) - The strategy that the agent uses to determine the next action based on the current state.
-- **Value Function**: \( V(s) = \mathbb{E}[R|s] \) - The expected reward for a state.
-- **Q-Function**: \( Q(s, a) = \mathbb{E}[R|s, a] \) - The expected reward for a state-action pair.
+### Types of ML
+![image](https://www.devopsschool.com/blog/wp-content/uploads/2024/08/image-48-1024x521.png)
 
-![image](https://github.com/user-attachments/assets/3abddebb-62f8-4ac5-8917-7799e5af9f49)
+
+^
+
+
+### The Exploration-Exploitation Dilemma
+
+A key challenge in RL is balancing *exploration* (trying new actions to discover better strategies) and *exploitation* (using the currently best-known strategy).  Early in training, exploration is crucial to discover the optimal behavior.  As the agent learns, exploitation becomes more important to maximize rewards.
+
+**Learning Process**:
+- Calculate returns
+- Update Q-values
+- Improve policy
+
+**Explore-Exploit Dilemma**:
+- Explore: collect more data to determine best outcome
+- Exploit: play with best policy to win
 
 ^
 
 
 
-### Reinforcement Learning Basics from Udemy
+### Core RL Concepts: A Simplified View
 
-**State**: 
-- Chess: location of pieces of board and remaining time.
-- Position of object, rotating , time
-- Avatar position of ghost, agent, time
+While the math can be complex, the core ideas are intuitive:
 
-**Action**:
-- Modify rotation
-- button we press
+* **Policy (π(a|s))**:  The agent's strategy: what action (a) to take in state (s).
+* **Value Function (V(s))**:  How good it is to be in state (s).
+* **Q-Function (Q(s,a))**: How good it is to take action (a) in state (s).
 
-**Reward**:
-- effectiveness of decision making, goal based. +ve or -ve reward. 
-- eat yellow pill. feedback
+
+
 @
 
 
-**Agent**:
-- Entity will participate in tasks (human being/ algo)
 
-**Environment**: 
-- Agent cant control 100, opponent. gravity, friction. 
+### Reinforcement Learning Glossary
 
-Markov Decision Process (discrete finite time , stochastic (future is modified partially) control process - decision)
+**Markov Decision Process (MDP):** A Markov Decision Process is a mathematical framework for modeling decision-making in environments where outcomes are partly random and partly under the control of a decision maker.
+
+- Discrete Finite Time: The process occurs over a finite number of steps or episodes.
+- Stochastic: Incorporates randomness in state transitions and rewards.
+
 @
 
 
-![image](https://github.com/user-attachments/assets/36eee823-0160-4a9e-9e71-14acf15e31d2)
+**Q Learning**: Q-Learning is a model-free reinforcement learning algorithm used to find the optimal action-selection policy for a given finite Markov Decision Process (MDP).
+
+@
+
+
+**Bellman Eq**:
+Bellman Equation: Provides a recursive decomposition for calculating the value of a state under a particular policy.
+
+Bellman Equation for Q-values (Q-Learning):
+Focuses on action-value pairs, providing a way to evaluate the utility of actions taken in states.
+
+<sup>Bellman equation for state values:
+
+![image](https://github.com/user-attachments/assets/dda5d110-619f-4d38-85e5-b5d6e4f3ef8a) (Represents the expected cumulative reward of being in a state ( s ) and following a policy ( \pi ).)
+
+Bellman equation for Q-values:
+
+![image](https://github.com/user-attachments/assets/28ec8159-2103-4c2c-934e-953e814a126e) (Represents the expected cumulative reward of taking an action ( a ) in state ( s ) and following the optimal policy thereafter.)</sup>
+
+@
+
+
+**Monte Carlo:** requires terminal state
+Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. In the context of reinforcement learning, Monte Carlo methods are used to estimate the value of states and actions by averaging the returns (cumulative rewards) received from multiple episodes of interaction with the environment. 
+
+
 
 ^
 
@@ -74,24 +119,21 @@ Markov Decision Process (discrete finite time , stochastic (future is modified p
 
 ### Tic-Tac-Toe Analogy
 
-The agent interfaces with the game (via the API)
-
 ```python
-game.start() 
-while not game.is_over() 
-  state = game.getstate() 
-  ### do something intelligent 
-  location = agent.pick_move(state) 
-  ### make the move game.move(symbol, location) 
+class TicTacToeRL:
+    def __init__(self): self.q_table = {}
+    def choose_action(self, state): return max(self.q_table.get(state, {}), key=self.q_table.get(state, {}).get, default='random')
+    def update_q(self, s, a, r, s_): self.q_table.setdefault(s, {})[a] = r + 0.9 * max(self.q_table.get(s_, {}).values(), default=0)
+    def play_game(self): state, done = 'initial', False; while not done: action = self.choose_action(state); state, reward, done = self.take_action(action); self.update_q(state, action, reward, state)
 ```
 @
 
 
 **Key Points**:
-- Episode = game/round/match
-- The agent will try to maximize its reward
-
-![image](https://github.com/user-attachments/assets/275ea771-56c8-46b2-abb6-3c2a0996d700)
+- Initialization: A Q-table is initialized to store state-action values.
+- Action Selection: Chooses an action based on the maximum Q-value for the current state, defaulting to 'random' if the state is unknown.
+- Q-value Update: Updates the Q-value for a given state-action pair using the reward and estimated future rewards.
+- Game Loop: Simulates playing the game by selecting actions and updating the Q-table until the game is done.
 
 ^
 
@@ -118,45 +160,12 @@ Policy parameter - W (shape is D x |A|)
 ```math
 π(a|S) = softmax(W^T s)
 ```
-
+Reward: Maximize the sum of future gains. Not immediate gratification.
 ![image](https://github.com/user-attachments/assets/8ea6bba0-0757-4e86-802d-aa6eb55a12f4)
 
-^
+Discounting is used for infinite horizon
+![image](https://github.com/user-attachments/assets/d93dbfb0-4f56-4591-9a76-6bcc8aeb5f07)
 
-
-
-
-### Bellman Equation
-
-Bellman equation for state values:
-
-![image](https://github.com/user-attachments/assets/dda5d110-619f-4d38-85e5-b5d6e4f3ef8a)
-
-Bellman equation for Q-values:
-
-![image](https://github.com/user-attachments/assets/28ec8159-2103-4c2c-934e-953e814a126e)
-
-^
-
-
-
-
-### Learning and Exploration
-
-**Learning Process**:
-- Calculate returns
-- Update Q-values
-- Improve policy
-
-**Explore-Exploit Dilemma**:
-- Explore: collect more data to determine best outcome
-- Exploit: play with best policy to win
-@
-
-
-Monte Carlo: requires terminal state
-
-![image](https://github.com/user-attachments/assets/5e073f59-1dbf-443f-ac60-6c6cc3b94368)
 
 ^
 
