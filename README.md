@@ -421,20 +421,24 @@ The Percentage Reward Function adjusts rewards based on the car's progress along
 - Reward for maintaining appropriate speed based on progress percentage.
 - Adjust rewards based on distance from center.
 - Heading direction reward for maintaining the correct heading.
+
 @
 
-Imagine a compass superimposed on track
+
+
+**Imagine a compass superimposed on track**
+
 ![image](https://github.com/user-attachments/assets/5988c0a6-53b6-4aa6-a6e1-5c4e3c6c0c99)
 
 ^
 
 
 
-### Race day Experience
 <section>
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <!-- Video Section on the Right -->
         <div style="flex: 1; padding-left: 20px;">
+            <h5>Race day Experience</h5>
             <video width="100%" controls>
                 <source src="https://github.com/user-attachments/assets/dc700014-aa9f-4bb1-8c80-4c478a261f60" type="video/mp4">
                 Your browser does not support the video tag.
