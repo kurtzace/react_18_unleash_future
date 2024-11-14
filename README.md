@@ -1,6 +1,17 @@
 ### Diving into Reinforcement learning via AWS Deep Racer
 
-Reinforcement learning (RL) is a machine learning paradigm where an *agent* learns to make optimal decisions within an *environment* by trial and error.  The agent's actions influence its state, and it receives *rewards* or *penalties* based on the outcome. The goal is to learn a *policy* – a strategy for selecting actions – that maximizes its long-term cumulative reward.
+<section>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <!-- Text Section on the Left -->
+        <div style="flex: 1; padding-right: 20px;">
+            <p>Reinforcement learning (RL) is a machine learning paradigm where an <em>agent</em> learns to make optimal decisions within an <em>environment</em> by trial and error. The agent's actions influence its state, and it receives <em>rewards</em> or <em>penalties</em> based on the outcome. The goal is to learn a <em>policy</em> – a strategy for selecting actions – that maximizes its long-term cumulative reward.</p>
+        </div>
+        <!-- Image Section on the Right -->
+        <div style="flex: 1; padding-left: 20px;">
+            <img src="images/conclusion.png" alt="RL Diagram" style="width: 100%; max-width: 400px;">
+        </div>
+    </div>
+</section>
 
 <sup>[Notes from AWS DeepRacer](https://github.com/kurtzace/diary-2024/issues/14)</sup>
 
@@ -17,7 +28,18 @@ Reinforcement learning (RL) is a machine learning paradigm where an *agent* lear
 @
 
 
-![image](https://github.com/user-attachments/assets/36eee823-0160-4a9e-9e71-14acf15e31d2)
+<section>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <!-- Text Section on the Left -->
+        <div style="flex: 1; padding-right: 20px;">
+           <img src="images/RLCONCEPTS.png" alt="RL Diagram" style="width: 100%; max-width: 400px;">
+        </div>
+        <!-- Image Section on the Right -->
+        <div style="flex: 1; padding-left: 20px;">
+            <img src="https://github.com/user-attachments/assets/36eee823-0160-4a9e-9e71-14acf15e31d2" alt="RL Diagram" style="width: 100%; max-width: 400px;">
+        </div>
+    </div>
+</section>
 
 @
 
@@ -29,18 +51,28 @@ Reinforcement learning (RL) is a machine learning paradigm where an *agent* lear
 
 
 
-### The Exploration-Exploitation Dilemma
-
-A key challenge in RL is balancing *exploration* (trying new actions to discover better strategies) and *exploitation* (using the currently best-known strategy).  Early in training, exploration is crucial to discover the optimal behavior.  As the agent learns, exploitation becomes more important to maximize rewards.
-
-**Learning Process**:
-- Calculate returns
-- Update Q-values
-- Improve policy
-
-**Explore-Exploit Dilemma**:
-- Explore: collect more data to determine best outcome
-- Exploit: play with best policy to win
+<section>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <!-- Text Section on the Left -->
+        <div style="flex: 1; padding-right: 20px; max-width:350px">
+    <b>Learning Process</b>
+    <ul>
+        <li>Calculate returns</li>
+        <li>Update Q-values</li>
+        <li>Improve policy</li>
+    </ul><br/>
+    <b>Explore-Exploit Dilemma</b>
+    <ul>
+        <li>Explore: collect more data to determine best outcome - trying new actions to discover better strategies</li>
+        <li>Update Q-values</li>
+        <li>Exploit: play with best policy to win - maximize rewards</li>
+    </ul>
+        </div>
+        <div style="flex: 1; padding-left: 20px;">
+            <img src="https://github.com/user-attachments/assets/5e966732-6ea0-41a7-b6b4-a9b8dfc4a9d6" alt="explore exploit" style="width: 100%; max-width: 600px;">
+        </div>
+    </div>
+</section>
 
 ^
 
@@ -109,6 +141,12 @@ Monte Carlo methods are a broad class of computational algorithms that rely on r
 
 
 ### Tic-Tac-Toe Analogy
+![image](images/TicTacToe.png)
+
+
+@
+
+
 
 ```python
 class TicTacToeRL:
