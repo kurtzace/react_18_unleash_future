@@ -273,8 +273,15 @@ Reward functions are critical in guiding the agent's learning process.
 - **Speed**: Current speed of the car
 - **Steering Angle**: Angle of the front wheels
 
-^
+@
 
+
+
+**How did Aws Ascertain Parameters**
+Image below shows how AWS leverages CNN to give us input parameters
+![image](https://github.com/user-attachments/assets/29647b08-4dff-49e5-9d68-0629e4db4968)
+
+^
 
 
 
@@ -388,7 +395,7 @@ plt.show()
 
 The Clockwise Reward Function incentivizes the car to follow the correct speed and direction based on waypoints.
 
-[Link to code snippet](code/clockwise_reward_function.py)
+[Link to code snippet](https://github.com/aws-experiments/aws_deep_racer_slides/blob/master/code/clockwise_reward_function.py)
 
 **Key Points:**
 - Penalize for offtrack.
@@ -406,7 +413,7 @@ The Clockwise Reward Function incentivizes the car to follow the correct speed a
 
 The Percentage Reward Function adjusts rewards based on the car's progress along the track.
 
-[Link to code snippet](code/percentage_reward_function.py)
+[Link to code snippet](https://github.com/aws-experiments/aws_deep_racer_slides/blob/master/code/percentage_reward_function.py)
 
 **Key Points:**
 - Penalize for offtrack or reversing.
@@ -414,9 +421,29 @@ The Percentage Reward Function adjusts rewards based on the car's progress along
 - Reward for maintaining appropriate speed based on progress percentage.
 - Adjust rewards based on distance from center.
 - Heading direction reward for maintaining the correct heading.
+@
+
+Imagine a compass superimposed on track
+![image](https://github.com/user-attachments/assets/5988c0a6-53b6-4aa6-a6e1-5c4e3c6c0c99)
 
 ^
 
+
+
+### Race day Experience
+<section>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <!-- Video Section on the Right -->
+        <div style="flex: 1; padding-left: 20px;">
+            <video width="100%" controls>
+                <source src="https://github.com/user-attachments/assets/dc700014-aa9f-4bb1-8c80-4c478a261f60" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+^
 
 
 
