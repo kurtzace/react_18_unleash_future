@@ -25,8 +25,8 @@ Reinforcement learning (RL) is a machine learning paradigm where an *agent* lear
 ### Types of ML
 ![image](https://www.devopsschool.com/blog/wp-content/uploads/2024/08/image-48-1024x521.png)
 
-
 ^
+
 
 
 ### The Exploration-Exploitation Dilemma
@@ -54,8 +54,6 @@ While the math can be complex, the core ideas are intuitive:
 * **Value Function (V(s))**:  How good it is to be in state (s).
 * **Q-Function (Q(s,a))**: How good it is to take action (a) in state (s).
 
-
-
 @
 
 
@@ -67,9 +65,6 @@ While the math can be complex, the core ideas are intuitive:
 - Discrete Finite Time: The process occurs over a finite number of steps or episodes.
 - Stochastic: Incorporates randomness in state transitions and rewards.
 
-@
-
-
 **Q Learning**: Q-Learning is a model-free reinforcement learning algorithm used to find the optimal action-selection policy for a given finite Markov Decision Process (MDP).
 
 @
@@ -78,27 +73,23 @@ While the math can be complex, the core ideas are intuitive:
 **Bellman Eq**:
 Bellman Equation: Provides a recursive decomposition for calculating the value of a state under a particular policy.
 
-Bellman Equation for Q-values (Q-Learning):
-Focuses on action-value pairs, providing a way to evaluate the utility of actions taken in states.
+Bellman Equation for Q-values (Q-Learning): Focuses on action-value pairs, providing a way to evaluate the utility of actions taken in states.
 
 <sup>Bellman equation for state values:
-
-![image](https://github.com/user-attachments/assets/dda5d110-619f-4d38-85e5-b5d6e4f3ef8a) (Represents the expected cumulative reward of being in a state ( s ) and following a policy ( \pi ).)
-
-Bellman equation for Q-values:
-
-![image](https://github.com/user-attachments/assets/28ec8159-2103-4c2c-934e-953e814a126e) (Represents the expected cumulative reward of taking an action ( a ) in state ( s ) and following the optimal policy thereafter.)</sup>
-
+![image](https://github.com/user-attachments/assets/dda5d110-619f-4d38-85e5-b5d6e4f3ef8a)
+ (Represents the expected cumulative reward of being in a state ( s ) and following a policy ( \pi ).)
 @
 
+
+
+Bellman equation for Q-values:
+![image](https://github.com/user-attachments/assets/28ec8159-2103-4c2c-934e-953e814a126e)
+ (Represents the expected cumulative reward of taking an action ( a ) in state ( s ) and following the optimal policy thereafter.)</sup>
 
 **Monte Carlo:** requires terminal state
 Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. In the context of reinforcement learning, Monte Carlo methods are used to estimate the value of states and actions by averaging the returns (cumulative rewards) received from multiple episodes of interaction with the environment. 
 
-
-
 ^
-
 
 
 
@@ -136,7 +127,6 @@ class TicTacToeRL:
 - Game Loop: Simulates playing the game by selecting actions and updating the Q-table until the game is done.
 
 ^
-
 
 
 
