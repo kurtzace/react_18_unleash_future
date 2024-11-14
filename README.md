@@ -113,9 +113,16 @@ Monte Carlo methods are a broad class of computational algorithms that rely on r
 ```python
 class TicTacToeRL:
     def __init__(self): self.q_table = {}
-    def choose_action(self, state): return max(self.q_table.get(state, {}), key=self.q_table.get(state, {}).get, default='random')
-    def update_q(self, s, a, r, s_): self.q_table.setdefault(s, {})[a] = r + 0.9 * max(self.q_table.get(s_, {}).values(), default=0)
-    def play_game(self): state, done = 'initial', False; while not done: action = self.choose_action(state); state, reward, done = self.take_action(action); self.update_q(state, action, reward, state)
+    def choose_action(self, state): 
+        return max(self.q_table.get(state, {}), key=self.q_table.get(state, {}).get, default='random')
+    def update_q(self, s, a, r, s_): 
+        self.q_table.setdefault(s, {})[a] = r + 0.9 * max(self.q_table.get(s_, {}).values(), default=0)
+    def play_game(self): 
+        state, done = 'initial', False; 
+        while not done: 
+            action = self.choose_action(state); 
+            state, reward, done = self.take_action(action); 
+            self.update_q(state, action, reward, state)
 ```
 @
 
