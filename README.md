@@ -74,6 +74,21 @@
     </div>
 </section>
 
+@
+
+
+
+**Domain knowledge to the rescue**
+how to be fast tip
+
+![image](https://github.com/user-attachments/assets/f6f9bed1-23d4-4a8d-b8f5-ff27fc21ba3f)
+
+Tips from Formula Racers/Technicians 
+https://youtu.be/wqf-dJyU_WA?si=B2DM-7RXUoc6FDNI
+
+https://youtu.be/KBXMan0Dafw?si=YGjixuJoc7HwibZV
+
+
 ^
 
 
