@@ -1,5 +1,6 @@
 React 18: Comprehensive Overview
 
+[My Notes](https://github.com/kurtzace/diary-2024/issues/10)
 ---
 
 ## Introduction
