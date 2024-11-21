@@ -1,6 +1,5 @@
----
-title: React 18: Comprehensive Overview
-theme: white
+React 18: Comprehensive Overview
+
 ---
 
 ## Introduction
